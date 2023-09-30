@@ -1,11 +1,5 @@
 #include <iostream>
-#include <array>
 #include <vector>
-#include <tuple>
-#include <chrono>
-#include <thread>
-
-using namespace std::chrono_literals;
 
 class Rod
 {
