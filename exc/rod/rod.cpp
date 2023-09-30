@@ -6,7 +6,7 @@ class Rod
 public:
     std::pair<int, std::vector<int>> cutRod(const std::vector<int> &prices) const
     {
-        if(prices.size() > INT_MAX)
+        if (prices.size() > INT_MAX)
         {
             std::cout << "Unimplemented vectorized solution\n";
             return std::make_pair(0, std::vector<int>());
@@ -35,7 +35,6 @@ public:
         {
             cut_res.push_back(choices[size]);
             size = size - choices[size];
-            
         }
         return std::make_pair(revenues[prices.size()], cut_res);
     }
@@ -45,10 +44,11 @@ int main()
 {
     Rod rod{};
     std::vector<int> prices{1, 5, 8, 9, 10, 17, 17};
-    const auto[revenue, cuts] = rod.cutRod(prices);
+    const auto [revenue, cuts] = rod.cutRod(prices);
     std::cout << "Maximum Revenue = " << revenue << " Cuts = ";
-       std::cout << "Cut on: ";
-    for (const auto& number : cuts) {
+    std::cout << "Cut on: ";
+    for (const auto &number : cuts)
+    {
         std::cout << number << " ";
     }
     std::cout << std::endl;
