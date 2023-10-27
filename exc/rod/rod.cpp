@@ -18,14 +18,14 @@ public:
         for (int rod_len = 1; rod_len <= size; rod_len++)
         {
             max_revenue = INT_MIN;
-            for (int cut = 0; cut < rod_len; cut++)
+            for (int cut = 1; cut <= rod_len; cut++)
             {
-                if (max_revenue < prices[cut] +
-                                      revenues[rod_len - cut - 1])
+                if (max_revenue < prices[cut - 1] +
+                                      revenues[rod_len - cut])
                 {
-                    max_revenue = prices[cut] +
-                                  revenues[rod_len - cut - 1];
-                    choices[rod_len] = cut + 1;
+                    max_revenue = prices[cut - 1] +
+                                  revenues[rod_len - cut];
+                    choices[rod_len] = cut;
                 }
             }
             revenues[rod_len] = max_revenue;

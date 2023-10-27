@@ -12,13 +12,13 @@ public:
         int left = 0;
         int right = nums.size() - 1;
         int mid = 0;
-        while(left < right)
+        while(left <= right)
         {
             if(target == nums[mid])
             {
                 return mid;
             }
-            mid = left + ((right - left) / 2);
+            mid = (right - left) / 2;
             if(nums[mid] > target)
             {
                 --right;
