@@ -2,40 +2,38 @@
 #include <vector>
 #include <algorithm>
 
-class Solution {
+
+class Solution
+{
 public:
-    int search(std::vector<int>& nums, int target) {
-        if(nums.empty())
-        {
-            return -1;
-        }
+    int search(std::vector<int> &nums, int target)
+    {
         int left = 0;
-        int right = nums.size() - 1;
+        int right = nums.size();
         int mid = 0;
-        while(left <= right)
+
+        while (left < right)
         {
-            if(target == nums[mid])
-            {
+            mid = left + (right - left) / 2;
+            if (target == nums[mid])
                 return mid;
-            }
-            mid = (right - left) / 2;
-            if(nums[mid] > target)
+            if (target < nums[mid])
             {
-                --right;
+                right = mid;
             }
-            else{
-                ++left;
+            else
+            {
+                left = ++mid;
             }
         }
+
         return -1;
-        
     }
 };
 
-
 int main()
 {
-    std::vector<int> nums = {-1,0,3,5,9,12};
-    std::cout << Solution().search(nums, 9) << std::endl;
+    std::vector<int> nums = {5};
+    std::cout << Solution().search(nums, 5) << std::endl;
     return 0;
 }
