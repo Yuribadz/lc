@@ -4,7 +4,8 @@
 
 class Solution {
 public:
-    bool isAnagram(std::string s, std::string t) const noexcept{
+    bool isAnagram(std::string s, std::string t) const noexcept 
+    {
         if(s.size() != t.size())
         {
             return false;
