@@ -3,3 +3,4 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # Target creational
 add_executable(sum sum.cpp)
+target_link_libraries(sum PRIVATE stack_lib)
