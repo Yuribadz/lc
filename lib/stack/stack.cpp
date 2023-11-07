@@ -29,7 +29,7 @@ std::optional<std::any> Stack::pop() {
     if (isEmpty()) {
         return std::nullopt;
     }
-    return data_[--top_index_];;
+    return data_[--top_index_];
 }
 
 std::optional<std::any> Stack::top() const {
