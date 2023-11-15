@@ -48,11 +48,11 @@ int main()
     list1->next->next = list1;
     ListNode *iter;
     std::cout << Solution().hasCycle(list1) << std::endl;
-    // for (int i = 0; i < 10; ++i)
-    // {
-    //     iter = list1->next;
-    //     delete list1;
-    //     list1 = iter;
-    // }
+    for (int i = 0; i < 2; ++i)
+    {
+        iter = list1->next;
+        delete list1;
+        list1 = iter;
+    }
     return 0;
 }
