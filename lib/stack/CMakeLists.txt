@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-cmake_minimum_required(VERSION 3.27)
+cmake_minimum_required(VERSION 3.2)
 set(CMAKE_CXX_STANDARD 17)
 
 add_library(stack_lib STATIC stack.cpp)
